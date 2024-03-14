@@ -3,6 +3,7 @@ package com.temmahadi.tictactoe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -34,17 +35,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void blank(){
-        btn1.setText("");
-        btn2.setText("");
-        btn3.setText("");
-        btn4.setText("");
-        btn5.setText("");
-        btn6.setText("");
-        btn7.setText("");
-        btn8.setText("");
-        btn9.setText("");
-        btnN.setText("New Game");
-        flag=count=0;
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn1.setText("");
+                btn2.setText("");
+                btn3.setText("");
+                btn4.setText("");
+                btn5.setText("");
+                btn6.setText("");
+                btn7.setText("");
+                btn8.setText("");
+                btn9.setText("");
+                btnN.setText("New Game");
+                flag=count=0;
+            }
+        },3000);
+                btnN.setText("Congrats!!");
+
     }
 
     int flag = 0, count = 0;
