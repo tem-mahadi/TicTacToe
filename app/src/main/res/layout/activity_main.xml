@@ -13,7 +13,6 @@
         android:layout_width="70dp"
         android:layout_height="80dp"
         android:layout_marginBottom="10dp"
-
         android:background="#3D5AFE"
         app:srcCompat="@android:drawable/ic_dialog_dialer" />
 

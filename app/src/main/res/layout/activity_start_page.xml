@@ -28,7 +28,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="\'HEY! Mahadi here. Lets Play a Game..."
+        android:text="HEY! Mahadi here. Lets Play a Game..."
         android:layout_marginBottom="11dp"
         android:padding="11dp"
         android:background="#FF9100"
