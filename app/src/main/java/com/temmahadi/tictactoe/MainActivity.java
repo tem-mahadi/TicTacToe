@@ -34,8 +34,15 @@ public class MainActivity extends AppCompatActivity {
         btnN = findViewById(R.id.btnN);
     }
 
-    public void blank(){
+    public void blank(View view){
+        Button curr = (Button) view;
+        int t=3000;
+        if(curr==btnN) {
+            t=1000;
+            btnN.setText("None");
+        }
         new Handler().postDelayed(new Runnable() {
+
             @Override
             public void run() {
                 btn1.setText("");
@@ -50,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 btnN.setText("New Game");
                 flag=count=0;
             }
-        },3000);
-                btnN.setText("Congrats!!");
+        },t);
+            btnN.setText(curr.getText().toString()+" was Smart");
 
     }
 
@@ -63,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         btnN.setText("Destroy");
 
         if(curr == btnN){
-            blank();
+            blank(btnN);
             return;
         }
 
@@ -89,38 +96,38 @@ public class MainActivity extends AppCompatActivity {
 
             if (bt1.equals(bt2) && bt2.equals(bt3) && !bt1.equals("")) {
                 Toast.makeText(this, "Winner is " + bt1, Toast.LENGTH_SHORT).show();
-                blank();
+                blank(btn1);
 
             } else if (bt4.equals(bt5) && bt5.equals(bt6) && !bt6.equals("")) {
                 Toast.makeText(this, "Winner is " + bt4, Toast.LENGTH_SHORT).show();
-                blank();
+                blank(btn4);
 
             } else if (bt7.equals(bt8) && bt8.equals(bt9) && !bt9.equals("")) {
                 Toast.makeText(this, "Winner is " + bt9, Toast.LENGTH_SHORT).show();
-                blank();
+                blank(btn7);
 
             } else if (bt1.equals(bt4) && bt4.equals(bt7) && !bt1.equals("")) {
                 Toast.makeText(this, "Winner is " + bt1, Toast.LENGTH_SHORT).show();
-                blank();
+                blank(btn1);
 
             } else if (bt2.equals(bt5) && bt2.equals(bt8) && !bt2.equals("")) {
                 Toast.makeText(this, "Winner is " + bt2, Toast.LENGTH_SHORT).show();
-                blank();
+                blank(btn2);
 
             } else if (bt3.equals(bt6) && bt6.equals(bt9) && !bt9.equals("")) {
                 Toast.makeText(this, "Winner is " + bt9, Toast.LENGTH_SHORT).show();
-                blank();
+                blank(btn3);
 
             } else if (bt1.equals(bt5) && bt5.equals(bt9) && !bt1.equals("")) {
                 Toast.makeText(this, "Winner is " + bt1, Toast.LENGTH_SHORT).show();
-                blank();
+                blank(btn1);
 
             } else if (bt3.equals(bt5) && bt5.equals(bt7) && !bt3.equals("")) {
                 Toast.makeText(this, "Winner is " + bt3, Toast.LENGTH_SHORT).show();
-                blank();
+                blank(btn3);
             } else if (count == 9) {
                 Toast.makeText(this, "Match Drawn", Toast.LENGTH_SHORT).show();
-                blank();
+                blank(btnN);
             }
 
         }
