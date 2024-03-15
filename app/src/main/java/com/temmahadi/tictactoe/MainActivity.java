@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.Objects;
@@ -13,11 +16,15 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9,btnN;
     String bt1, bt2, bt3, bt4, bt5, bt6, bt7, bt8, bt9, btN;
+    ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        image=findViewById(R.id.imageView);
+        Animation scale= AnimationUtils.loadAnimation(this,R.anim.doanim);
+        image.setAnimation(scale);
         init();
     }
 
@@ -36,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void blank(View view){
         Button curr = (Button) view;
-        int t=3000;
+        int t=2000;
         if(curr==btnN) {
             t=1000;
             btnN.setText("None");
