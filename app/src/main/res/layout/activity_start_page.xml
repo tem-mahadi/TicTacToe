@@ -9,6 +9,15 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:lottie_rawRes="@raw/tictac"
+        android:layout_marginBottom="11dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="80dp"
